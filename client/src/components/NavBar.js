@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom';
 function NavBar({user, setUser}) {
 
     function handleLogout(){
@@ -18,6 +18,8 @@ function NavBar({user, setUser}) {
     <nav>
         <button id='logout-button' onClick={handleLogout}>Logout</button>
     </nav>
+    <Link  id='new-item-button' to='/new-item'>New Item</Link>
+
     </>
     )
 }

@@ -3,12 +3,15 @@ import {Routes, Route} from 'react-router-dom';
 import HomePage from "../pages/HomePage";
 import Login from "../pages/Login";
 import NavBar from "./NavBar";
+import NewItem from "./NewItem";
 
 
 function App() {
 
   const [user, setUser] = useState(null);
   const [errors, setErrors]= useState([]);
+
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     fetch('/api/me').then((r) => {
@@ -28,6 +31,7 @@ function App() {
     <div className="App">
       <NavBar user={user} setUser={setUser} />
       <Routes>
+        <Route exact path="/new-item" element={<NewItem items={items} setItems={setItems}/>}></Route>
        
         <Route exact path="/" element={<HomePage user={user} setUser={setUser}/>}></Route>
       </Routes>
