@@ -1,23 +1,30 @@
 import {useState} from 'react';
 
-function NewItem() {
+function NewItem({setItems, items}) {
 
     const [itemName, setItemName]= useState('');
     const [number, setNumber] = useState('');
     const [type, setType] = useState('')
     const [instructions, setInstructions] = useState('');
 
-    function addItem() {
+    function addItem(e) {
+        e.preventDefault();
+
         fetch(`/api/items`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             }, 
-            body: JSON.stringify({name: itemName, number, type, insructions: instructions})
+            body: JSON.stringify({name: itemName, number, item_type: type, insructions: instructions})
 
         })
+        .then((r) => r.json())
+        .then((data)=> {
+            setItems([...items], data)
+            console.log(data)})
     }
 
+    console.log(items);
 
     return(
         <>
@@ -55,9 +62,10 @@ function NewItem() {
             value={instructions}
             onChange={(e) => setInstructions(e.target.value)}
             ></input> <br></br>
+            <button className="button" type='submit'>Submit</button>
      
             </form>
-            <button className="button" type='submit'>Submit</button>
+            
         </>
     )
 }
