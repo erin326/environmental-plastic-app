@@ -7,13 +7,13 @@ function ItemList({items, setItems}) {
     
     
 
-    useEffect(() => {
-        fetch('/api/items')
-        .then((r) => r.json())
-        .then((data) => console.log((data)));
+    // useEffect(() => {
+    //     fetch('/api/items')
+    //     .then((r) => r.json())
+    //     .then((data) => console.log((data)));
 
 
-    },[])
+    // },[])
 
     return(
         <>

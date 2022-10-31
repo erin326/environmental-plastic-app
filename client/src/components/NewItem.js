@@ -24,7 +24,8 @@ function NewItem({setItems, items}) {
             console.log(data)})
     }
 
-    console.log(items);
+  
+    // console.log(items);
 
     return(
         <>
