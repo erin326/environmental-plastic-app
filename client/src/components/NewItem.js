@@ -18,10 +18,10 @@ function NewItem({setItems, items}) {
             body: JSON.stringify({name: itemName, number, item_type: type, insructions: instructions})
 
         })
-        .then((r) => r.json())
-        .then((data)=> {
-            setItems([...items], data)
-            console.log(data)})
+        // .then((r) => r.json())
+        // .then((data)=> {
+        //     setItems([...items], data)
+        //     console.log(data)})
     }
 
   

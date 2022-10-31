@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {Routes, Route} from 'react-router-dom';
 import HomePage from "../pages/HomePage";
 import Login from "../pages/Login";
+import ItemList from "./ItemList";
 import NavBar from "./NavBar";
 import NewItem from "./NewItem";
 
@@ -32,6 +33,7 @@ function App() {
       <NavBar user={user} setUser={setUser} />
       <Routes>
         <Route exact path="/new-item" element={<NewItem items={items} setItems={setItems}/>}></Route>
+        <Route exact path='all-items' element={<ItemList items={items} setItems={setItems} />}></Route>
        
         <Route exact path="/" element={<HomePage user={user} setUser={setUser}/>}></Route>
       </Routes>
