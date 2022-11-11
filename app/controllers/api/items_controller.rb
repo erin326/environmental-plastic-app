@@ -14,6 +14,16 @@ class Api::ItemsController < ApplicationController
         render json: item
     end
 
+    def show
+        item = Item.find(params[:id])
+        render json: item
+    end
+
+    def destroy
+        item = Item.find_by(id: params[:id])
+        render json: item
+    end
+
     private
 
     def item_params

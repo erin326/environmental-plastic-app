@@ -6,6 +6,14 @@ function ItemCard({item}) {
 
     const {id, name, number, type, insructions} = item;
 
+    function handleDeleteItem() {
+        fetch(`api/items/:${id}`)
+        .then((r) => r.json())
+        .then((data) => console.log(data))
+        
+
+    }
+
     return(
         <>
         <Card>
@@ -18,6 +26,7 @@ function ItemCard({item}) {
             Instructions: {insructions}
             <br></br>
             
+            <button onClick={handleDeleteItem}>Delete</button> 
         </Card>
         </>
     )

@@ -38,8 +38,6 @@ function App() {
         <Route exact path="/" element={<HomePage user={user} setUser={setUser}/>}></Route>
       </Routes>
 
-
-      
     </div>
   );
 }
