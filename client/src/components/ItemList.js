@@ -12,17 +12,31 @@ function ItemList() {
     useEffect(() => {
         fetch('/api/items')
         .then((r) => r.json())
-        .then((data) => {setItems(data)})
+        .then((data) => setItems(data))
 
 
     },[])
-    console.log(items);
+
+
+    
+    function handleDeleteItem(id) {
+
+        const updatedItems = items.filter((item) =>  item.id !== id)
+      fetch(`/api/items/:${id}`, {
+          method: "DELETE"
+      });
+      setItems(updatedItems)
+
+     
+      
+
+  }
 
     return(
         <>
        {items.length > 0 ? (
         items.map((item) => (
-            <ItemCard  key={item.id} item={item}/>
+            <ItemCard key={item.id} item={item}  onDeleteItem={handleDeleteItem}/>
         ))
        ) : null}
         </>

@@ -2,17 +2,22 @@ import {useState} from 'react';
 import {Card, Image} from 'semantic-ui-react';
 
 
-function ItemCard({item}) {
+function ItemCard({item, onDeleteItem}) {
 
     const {id, name, number, type, insructions} = item;
+    console.log(id);
 
-    function handleDeleteItem() {
-        fetch(`api/items/:${id}`)
-        .then((r) => r.json())
-        .then((data) => console.log(data))
+    // function handleDeleteItem() {
+
+    //       const updatedItems = 
+    //     fetch(`/api/items/:${id}`, {
+    //         method: "DELETE"
+    //     });
+
+       
         
 
-    }
+    // }
 
     return(
         <>
@@ -26,7 +31,7 @@ function ItemCard({item}) {
             Instructions: {insructions}
             <br></br>
             
-            <button onClick={handleDeleteItem}>Delete</button> 
+            <button onClick={() => onDeleteItem(id)}>Delete</button> 
         </Card>
         </>
     )

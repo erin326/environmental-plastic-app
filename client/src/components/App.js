@@ -12,7 +12,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [errors, setErrors]= useState([]);
 
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);  // const [items, setItems] = useState([]);
 
   useEffect(() => {
     fetch('/api/me').then((r) => {
@@ -32,8 +32,8 @@ function App() {
     <div className="App">
       <NavBar user={user} setUser={setUser} />
       <Routes>
-        <Route exact path="/new-item" element={<NewItem items={items} setItems={setItems}/>}></Route>
-        <Route exact path='all-items' element={<ItemList items={items} setItems={setItems} />}></Route>
+        <Route exact path="/new-item" element={<NewItem />}></Route>
+        <Route exact path='all-items' element={<ItemList  />}></Route>
        
         <Route exact path="/" element={<HomePage user={user} setUser={setUser}/>}></Route>
       </Routes>

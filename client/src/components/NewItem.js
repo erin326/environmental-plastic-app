@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-function NewItem({setItems, items}) {
+function NewItem() {
 
     const [itemName, setItemName]= useState('');
     const [number, setNumber] = useState('');
