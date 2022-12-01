@@ -14,7 +14,11 @@ function NavBar({user, setUser}) {
     return(
 
     <>
+
      <h3 id="welcome-nav">Welcome, {user.username}!</h3>
+     <h1>
+        <Link to='/'>Recycle Buddy</Link>
+     </h1>
     <nav>
         <button id='logout-button' onClick={handleLogout}>Logout</button>
     </nav>

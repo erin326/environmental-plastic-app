@@ -10,54 +10,54 @@ function HomePage({user}) {
 
     // },[]);
 
-    function normalize(inputTime) {
-        parseInt(inputTime)
+    // function normalize(inputTime) {
+    //     parseInt(inputTime)
      
-        let d = new Date(inputTime)
-        let strTime = d.toUTCString();
+    //     let d = new Date(inputTime)
+    //     let strTime = d.toUTCString();
       
-        while (strTime.slice(0,3) !== 'Thu') {
-            inputTime -= 24*60*60
-            d = new Date(inputTime)
-            strTime = d.toUTCString();
-         } 
-         while (strTime.slice(17,19) !== '00') {
-            inputTime -= 60*60 
-            d = new Date(inputTime)
-            strTime = d.toUTCString();
+    //     while (strTime.slice(0,3) !== 'Thu') {
+    //         inputTime -= 24*60*60
+    //         d = new Date(inputTime)
+    //         strTime = d.toUTCString();
+    //      } 
+    //      while (strTime.slice(17,19) !== '00') {
+    //         inputTime -= 60*60 
+    //         d = new Date(inputTime)
+    //         strTime = d.toUTCString();
           
-        } while (strTime.slice(20,22) !== '00') {
+    //     } while (strTime.slice(20,22) !== '00') {
             
-            inputTime -= 60 
-            d = new Date(inputTime)
-            strTime = d.toUTCString();
-        } while (strTime.slice(23,25) !== '00') {
+    //         inputTime -= 60 
+    //         d = new Date(inputTime)
+    //         strTime = d.toUTCString();
+    //     } while (strTime.slice(23,25) !== '00') {
          
-            inputTime -=1
-            d = new Date(inputTime)
-            strTime = d.toUTCString();
-        }
-        return strTime;
-        }
+    //         inputTime -=1
+    //         d = new Date(inputTime)
+    //         strTime = d.toUTCString();
+    //     }
+    //     return strTime;
+    //     }
        
 
-    normalize('11111111')
+    // normalize('11111111')
 
 
-    function testFor() {
-        let a = 2;
-        let b = 0;
-        let c = -1;
-        for(b = 0; a < 12; b++) { //1
-            a = (a + a) * c;  //-4, 8, -16, 32
+    // function testFor() {
+    //     let a = 2;
+    //     let b = 0;
+    //     let c = -1;
+    //     for(b = 0; a < 12; b++) { //1
+    //         a = (a + a) * c;  //-4, 8, -16, 32
          
-        }
-        console.log(a,b);
-    }   
+    //     }
+    //     console.log(a,b);
+    // }   
  
     return(
         <>
-        <p>Welcome {user.username}!</p>
+        {/* <p>Welcome {user.username}!</p> */}
 
         <h2>Recycled Items</h2>
        <ItemList />
