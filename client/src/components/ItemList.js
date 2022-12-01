@@ -18,13 +18,16 @@ function ItemList() {
     },[])
 
 
+    console.log(items);
     
     function handleDeleteItem(id) {
 
-        const updatedItems = items.filter((item) =>  item.id !== id)
-      fetch(`/api/items/:${id}`, {
+        const updatedItems = items.filter((item) => item.id !== id)
+
+      fetch(`/api/items/${id}`, {
           method: "DELETE"
       });
+      console.log(id);
       setItems(updatedItems)
 
      
